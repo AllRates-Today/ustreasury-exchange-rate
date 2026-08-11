@@ -1,10 +1,10 @@
 # U.S. Department of the Treasury Exchange Rate API client
 
-Official **U.S. Department of the Treasury** (the United States) quarterly exchange rates in Node.js / TypeScript — ~145 currencies against the USD, with history back to 2001. Zero dependencies, works in Node 18+, Bun, Deno, and edge runtimes (uses global `fetch`).
+Official **U.S. Department of the Treasury** (the United States) quarterly exchange rates in Node.js / TypeScript — 145 currencies against the USD, with history back to 2001. Zero dependencies, works in Node 18+, Bun, Deno, and edge runtimes (uses global `fetch`).
 
 These are the *published tax authority rates* required for tax filings, customs valuations, audits, and compliant invoicing — not moving market rates. Every response carries the publisher's own publication date.
 
-Powered by [AllRatesToday](https://allratestoday.com/central-bank-rates-api/ustreasury/). Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — 300 requests/month, no credit card.
+Powered by [AllRatesToday](https://allratestoday.com/tax-authority-rates-api/ustreasury/). Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required.
 
 ## Install
 
@@ -42,6 +42,14 @@ const series = await getHistory(
 );
 ```
 
+## Currencies covered
+
+U.S. Department of the Treasury currently publishes rates covering **146 currencies** (as of the latest table):
+
+`AED` · `AFN` · `ALL` · `AMD` · `AOA` · `ARS` · `AUD` · `AZN` · `BAM` · `BBD` · `BDT` · `BGN` · `BHD` · `BIF` · `BMD` · `BND` · `BOB` · `BRL` · `BSD` · `BWP` · `BYN` · `BZD` · `CAD` · `CDF` · `CHF` · `CLP` · `CNY` · `COP` · `CRC` · `CUC` · `CUP` · `CVE` · `CZK` · `DJF` · `DKK` · `DOP` · `DZD` · `EGP` · `ERN` · `ETB` · `EUR` · `FJD` · `GBP` · `GEL` · `GHS` · `GMD` · `GNF` · `GTQ` · `GYD` · `HKD` · `HNL` · `HTG` · `HUF` · `IDR` · `ILS` · `INR` · `IQD` · `IRR` · `ISK` · `JMD` · `JOD` · `JPY` · `KES` · `KGS` · `KHR` · `KMF` · `KRW` · `KWD` · `KYD` · `KZT` · `LAK` · `LBP` · `LKR` · `LRD` · `LSL` · `LYD` · `MAD` · `MDL` · `MGA` · `MKD` · `MMK` · `MNT` · `MRU` · `MUR` · `MVR` · `MWK` · `MXN` · `MYR` · `MZN` · `NAD` · `NGN` · `NIO` · `NOK` · `NPR` · `NZD` · `OMR` · `PEN` · `PGK` · `PHP` · `PKR` · `PLN` · `PYG` · `QAR` · `RON` · `RSD` · `RUB` · `RWF` · `SAR` · `SBD` · `SCR` · `SDG` · `SEK` · `SGD` · `SLE` · `SOS` · `SRD` · `SSP` · `STN` · `SYP` · `SZL` · `THB` · `TJS` · `TMT` · `TND` · `TOP` · `TRY` · `TTD` · `TWD` · `TZS` · `UAH` · `UGX` · `USD` · `UYU` · `UZS` · `VES` · `VND` · `VUV` · `WST` · `XAF` · `XCD` · `XCG` · `XOF` · `YER` · `ZAR` · `ZMW` · `ZWG`
+
+Pairs the tax authority does not print directly are resolved from this table (see below).
+
 ## Published vs derived rates
 
 If U.S. Department of the Treasury does not print a pair directly, the API resolves it from the bank's table (inverse, or a cross rate via USD) and flags it `derived: true` with the `method` — so official and computed values are never confused.
@@ -50,7 +58,7 @@ If U.S. Department of the Treasury does not print a pair directly, the API resol
 
 - Every request counts toward your AllRatesToday monthly quota. Rates change once per business day — cache a day's table locally and a small quota goes a long way.
 - Latest rates are on every plan (including free); historical dates and time series need a [paid plan](https://allratestoday.com/pricing/).
-- Full API reference: [allratestoday.com/docs#central-bank](https://allratestoday.com/docs/#central-bank) · All covered banks: [central bank rates API](https://allratestoday.com/central-bank-rates-api/)
+- Full API reference: [allratestoday.com/docs#central-bank](https://allratestoday.com/docs/#central-bank) · All covered sources: [tax authority rates API](https://allratestoday.com/tax-authority-rates-api/)
 
 ## License
 
