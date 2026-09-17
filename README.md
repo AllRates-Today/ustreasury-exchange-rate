@@ -1,4 +1,4 @@
-# U.S. Department of the Treasury Exchange Rate API — ustreasury-exchange-rate
+# U.S. Department of the Treasury Exchange Rates API — ustreasury-exchange-rate
 
 [![npm version](https://img.shields.io/npm/v/ustreasury-exchange-rate.svg)](https://www.npmjs.com/package/ustreasury-exchange-rate)
 [![license](https://img.shields.io/npm/l/ustreasury-exchange-rate.svg)](https://github.com/AllRates-Today/ustreasury-exchange-rate/blob/main/LICENSE)
@@ -18,6 +18,21 @@
 
 > **Official rate, not mid-market:** every value here is a number U.S. Department of the Treasury itself published, fixed once printed and carrying the tax authority's own `rate_date` — what filings and audits require. Need the live interbank midpoint for pricing or display instead? Use the [mid-market API](https://allratestoday.com/docs/) or [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk). The two can diverge by several percent.
 
+## ⚡ Try it without a key
+
+The latest U.S. Department of the Treasury table is also served keyless, CORS-open and edge-cached, for evaluation, embeds and AI agents:
+
+```bash
+curl "https://allratestoday.com/api/open/central-bank/ustreasury?source=USD&target=EUR"
+```
+
+```js
+const r = await fetch('https://allratestoday.com/api/open/central-bank/ustreasury').then((x) => x.json());
+console.log(r.rate_date, r.rates.length); // the tax authority's latest published table, no key
+```
+
+The open endpoint serves the *latest* table only and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables, history, and CSV/XML/Excel output.
+
 ## 🔑 Get your API key
 
 Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
@@ -36,7 +51,7 @@ yarn add ustreasury-exchange-rate
 pnpm add ustreasury-exchange-rate
 ```
 
-Also published under the org scope as [`@allratestoday/ustreasury-exchange-rate`](https://www.npmjs.com/package/@allratestoday/ustreasury-exchange-rate) — same code, same versions.
+Requires Node 18+ (global `fetch`); also runs on Bun, Deno and edge runtimes. Also published under the org scope as [`@allratestoday/ustreasury-exchange-rate`](https://www.npmjs.com/package/@allratestoday/ustreasury-exchange-rate) — same code, same versions.
 
 ## 🏁 Quick start
 
@@ -77,7 +92,7 @@ const pair = await getRate('USD', 'EUR', { apiKey: 'art_live_...' });
   rate_type: 'quarterly',
   derived: false,
   method: 'published',
-  disclaimer: '…'
+  disclaimer: 'Official rates as published by the named central bank. On weekends/holidays the most recent published rate_date is returned.'
 }
 ```
 
@@ -174,6 +189,39 @@ U.S. Department of the Treasury currently publishes rates covering **145 currenc
 
 🇦🇪 `AED` · 🇦🇫 `AFN` · 🇦🇱 `ALL` · 🇦🇲 `AMD` · 🇦🇴 `AOA` · 🇦🇷 `ARS` · 🇦🇺 `AUD` · 🇦🇿 `AZN` · 🇧🇦 `BAM` · 🇧🇧 `BBD` · 🇧🇩 `BDT` · 🇧🇬 `BGN` · 🇧🇭 `BHD` · 🇧🇮 `BIF` · 🇧🇲 `BMD` · 🇧🇳 `BND` · 🇧🇴 `BOB` · 🇧🇷 `BRL` · 🇧🇸 `BSD` · 🇧🇼 `BWP` · 🇧🇾 `BYN` · 🇧🇿 `BZD` · 🇨🇦 `CAD` · 🇨🇩 `CDF` · 🇨🇭 `CHF` · 🇨🇱 `CLP` · 🇨🇳 `CNY` · 🇨🇴 `COP` · 🇨🇷 `CRC` · 🇨🇺 `CUC` · 🇨🇺 `CUP` · 🇨🇻 `CVE` · 🇨🇿 `CZK` · 🇩🇯 `DJF` · 🇩🇰 `DKK` · 🇩🇴 `DOP` · 🇩🇿 `DZD` · 🇪🇬 `EGP` · 🇪🇷 `ERN` · 🇪🇹 `ETB` · 🇪🇺 `EUR` · 🇫🇯 `FJD` · 🇬🇧 `GBP` · 🇬🇪 `GEL` · 🇬🇭 `GHS` · 🇬🇲 `GMD` · 🇬🇳 `GNF` · 🇬🇹 `GTQ` · 🇬🇾 `GYD` · 🇭🇰 `HKD` · 🇭🇳 `HNL` · 🇭🇹 `HTG` · 🇭🇺 `HUF` · 🇮🇩 `IDR` · 🇮🇱 `ILS` · 🇮🇳 `INR` · 🇮🇶 `IQD` · 🇮🇷 `IRR` · 🇮🇸 `ISK` · 🇯🇲 `JMD` · 🇯🇴 `JOD` · 🇯🇵 `JPY` · 🇰🇪 `KES` · 🇰🇬 `KGS` · 🇰🇭 `KHR` · 🇰🇲 `KMF` · 🇰🇷 `KRW` · 🇰🇼 `KWD` · 🇰🇾 `KYD` · 🇰🇿 `KZT` · 🇱🇦 `LAK` · 🇱🇧 `LBP` · 🇱🇰 `LKR` · 🇱🇷 `LRD` · 🇱🇸 `LSL` · 🇱🇾 `LYD` · 🇲🇦 `MAD` · 🇲🇩 `MDL` · 🇲🇬 `MGA` · 🇲🇰 `MKD` · 🇲🇲 `MMK` · 🇲🇳 `MNT` · 🇲🇷 `MRU` · 🇲🇺 `MUR` · 🇲🇻 `MVR` · 🇲🇼 `MWK` · 🇲🇽 `MXN` · 🇲🇾 `MYR` · 🇲🇿 `MZN` · 🇳🇦 `NAD` · 🇳🇬 `NGN` · 🇳🇮 `NIO` · 🇳🇴 `NOK` · 🇳🇵 `NPR` · 🇳🇿 `NZD` · 🇴🇲 `OMR` · 🇵🇪 `PEN` · 🇵🇬 `PGK` · 🇵🇭 `PHP` · 🇵🇰 `PKR` · 🇵🇱 `PLN` · 🇵🇾 `PYG` · 🇶🇦 `QAR` · 🇷🇴 `RON` · 🇷🇸 `RSD` · 🇷🇺 `RUB` · 🇷🇼 `RWF` · 🇸🇦 `SAR` · 🇸🇧 `SBD` · 🇸🇨 `SCR` · 🇸🇩 `SDG` · 🇸🇪 `SEK` · 🇸🇬 `SGD` · 🇸🇱 `SLE` · 🇸🇴 `SOS` · 🇸🇷 `SRD` · 🇸🇸 `SSP` · 🇸🇹 `STN` · 🇸🇾 `SYP` · 🇸🇿 `SZL` · 🇹🇭 `THB` · 🇹🇯 `TJS` · 🇹🇲 `TMT` · 🇹🇳 `TND` · 🇹🇴 `TOP` · 🇹🇷 `TRY` · 🇹🇹 `TTD` · 🇹🇼 `TWD` · 🇹🇿 `TZS` · 🇺🇦 `UAH` · 🇺🇬 `UGX` · 🇺🇾 `UYU` · 🇺🇿 `UZS` · 🇻🇪 `VES` · 🇻🇳 `VND` · 🇻🇺 `VUV` · 🇼🇸 `WST` · `XAF` · `XCD` · `XCG` · `XOF` · 🇾🇪 `YER` · 🇿🇦 `ZAR` · 🇿🇲 `ZMW` · 🇿🇼 `ZWG`
 
+## 🏛️ Source
+
+The U.S. Department of the Treasury publishes the Treasury Reporting Rates of Exchange each quarter, through its Bureau of the Fiscal Service. Every US government agency must use these rates to convert foreign-currency balances into dollars for official reports — and contractors, grant recipients, and auditors follow the same table. Rates are amended mid-quarter when a currency moves sharply.
+
+- Publisher's own page: [Treasury Reporting Rates of Exchange](https://fiscaldata.treasury.gov/datasets/treasury-reporting-rates-exchange/) · [www.treasury.gov](https://www.treasury.gov)
+- Publication: every quarter; the exact schedule, freshness status and any current delay are on the [U.S. Department of the Treasury rates page](https://allratestoday.com/tax-authority-rates-api/ustreasury/)
+- Values are stored unmodified, with the publisher's own `rate_date` on every row — see the [methodology](https://allratestoday.com/official-rates-methodology/)
+
+## 🧭 Reading the numbers
+
+- `value` is always **quote currency per 1 unit of base currency** (`base: "EUR", quote: "USD", value: 1.15` means 1 EUR = 1.15 USD).
+- U.S. Department of the Treasury quotes **foreign currency per 1 USD** (e.g. `base: "USD", quote: "USD"` means USD per one USD).
+- Need the other way round? Ask `getRate(target, source)` and the API inverts or crosses for you, flagged `derived: true` — never divide a published rate yourself in a compliance workflow.
+- `rate_type` tells you which of the tax authority's series a row belongs to (`quarterly` here); some publishers print buy/sell or several fixings for the same pair.
+
+## 🧩 ERP & accounting systems
+
+Loading the official U.S. Department of the Treasury rate into an accounting system is a supported workflow, not a hack. Step-by-step guides with the direction each system expects:
+
+- [Dynamics 365 Business Central](https://allratestoday.com/docs/integrations/business-central/) — built-in Currency Exchange Rate Service, no code
+- [Xero](https://allratestoday.com/docs/integrations/xero/) · [QuickBooks Online](https://allratestoday.com/docs/integrations/quickbooks/) · [SAP S/4HANA and ECC](https://allratestoday.com/docs/integrations/sap/) · [Odoo](https://allratestoday.com/docs/integrations/odoo/)
+
+The same keyed endpoints return `?format=csv`, `?format=xml` and `?format=xlsx`, and accept the key as `?api_key=` on the URL for importers that cannot send headers:
+
+```bash
+curl "https://allratestoday.com/api/v1/central-bank/ustreasury/latest?format=xml&api_key=art_live_..."
+```
+
+## 🤖 AI agents
+
+- MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
+- Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
+
 ## ⚖️ Published vs derived rates
 
 If U.S. Department of the Treasury does not print a pair directly, the API resolves it from the tax authority's own table and says so — official and computed values are never confused:
@@ -248,7 +296,8 @@ Need the whole archive rather than an API call? The same published tables are mi
 
 - [U.S. Department of the Treasury rates page](https://allratestoday.com/tax-authority-rates-api/ustreasury/) — live table, publication cadence, FAQ
 - [All tax authority sources](https://allratestoday.com/tax-authority-rates-api/)
-- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/)
+- [Package docs on the site](https://allratestoday.com/docs/sdk/ustreasury-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
+- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/) · [Methodology](https://allratestoday.com/official-rates-methodology/)
 - [Register (free)](https://allratestoday.com/register) · [Pricing](https://allratestoday.com/pricing/)
 - [GitHub](https://github.com/AllRates-Today/ustreasury-exchange-rate)
 
