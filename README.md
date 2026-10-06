@@ -85,10 +85,10 @@ const pair = await getRate('USD', 'EUR', { apiKey: 'art_live_...' });
 {
   bank: 'ustreasury',
   name: 'U.S. Department of the Treasury',
-  rate_date: '2026-06-30',   // U.S. Department of the Treasury's own publication date
+  rate_date: '2026-09-30',   // U.S. Department of the Treasury's own publication date
   source: 'USD',
   target: 'EUR',
-  rate: 0.877,
+  rate: 0.881,
   rate_type: 'quarterly',
   derived: false,
   method: 'published',
@@ -113,9 +113,9 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'ustreasury',
   name: 'U.S. Department of the Treasury',
-  rate_date: '2026-06-30',
+  rate_date: '2026-09-30',
   rates: [
-    { "base": "USD", "quote": "EUR", "type": "quarterly", "value": 0.877 },
+    { "base": "USD", "quote": "EUR", "type": "quarterly", "value": 0.881 },
     // … the rest of the published table (145 currencies vs USD)
   ],
   disclaimer: '…'
@@ -155,7 +155,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'ustreasury-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'EUR', from: '2026-01-01', to: '2026-06-30' },
+  { source: 'USD', target: 'EUR', from: '2026-01-01', to: '2026-09-30' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -168,11 +168,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'EUR',
   from: '2026-01-01',
-  to: '2026-06-30',
+  to: '2026-09-30',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-06-30', rate: 0.877, rate_type: 'quarterly', derived: false, method: 'published' },
+    { date: '2026-09-30', rate: 0.881, rate_type: 'quarterly', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
