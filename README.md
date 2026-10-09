@@ -4,6 +4,8 @@
 [![license](https://img.shields.io/npm/l/ustreasury-exchange-rate.svg)](https://github.com/AllRates-Today/ustreasury-exchange-rate/blob/main/LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://www.npmjs.com/package/ustreasury-exchange-rate)
 [![TypeScript](https://img.shields.io/badge/TypeScript-types%20included-3178C6.svg)](https://www.typescriptlang.org/)
+[![USD/EUR today](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fallratestoday.com%2Fapi%2Fopen%2Fcentral-bank%2Fustreasury%3Fsource%3DUSD%26target%3DEUR&query=%24.rate&label=USD%2FEUR%20published%20by%20U.S.%20Department%20of%20the%20Treasury&color=0A7E8C&cacheSeconds=3600)](https://allratestoday.com/tax-authority-rates-api/ustreasury/)
+[![rate date](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fallratestoday.com%2Fapi%2Fopen%2Fcentral-bank%2Fustreasury%3Fsource%3DUSD%26target%3DEUR&query=%24.rate_date&label=rate%20date&color=555&cacheSeconds=3600)](https://allratestoday.com/tax-authority-rates-api/ustreasury/)
 
 **Official U.S. Department of the Treasury (the United States) quarterly exchange rates for Node.js and TypeScript. The published tax authority rates behind tax filings, customs valuations, audits, and compliant invoicing — not market estimates, but the numbers U.S. Department of the Treasury itself prints, every quarter.**
 
@@ -32,6 +34,79 @@ console.log(r.rate_date, r.rates.length); // the tax authority's latest publishe
 ```
 
 The open endpoint serves the *latest* table only and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables, history, and CSV/XML/Excel output.
+
+## 📈 Latest published table
+
+Today's full U.S. Department of the Treasury table, straight from the tax authority's latest publication. On GitHub it is refreshed by [a daily Action](.github/workflows/daily-table.yml) that reads the keyless endpoint above and commits only when the tax authority publishes a new table; the copy on npm is as of the package's publish date.
+
+<!-- daily-table:start -->
+Published **2026-09-30** by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-08.
+
+| Base | Quote | Type | Rate |
+| --- | --- | --- | ---: |
+| USD | AED | quarterly | 3.673 |
+| USD | AFN | quarterly | 65.15 |
+| USD | ALL | quarterly | 80.75 |
+| USD | AMD | quarterly | 360 |
+| USD | AOA | quarterly | 913 |
+| USD | ARS | quarterly | 1545 |
+| USD | AUD | quarterly | 1.435 |
+| USD | AZN | quarterly | 1.7 |
+| USD | BAM | quarterly | 1.722 |
+| USD | BBD | quarterly | 2.02 |
+| USD | BDT | quarterly | 124 |
+| USD | BGN | quarterly | 0.87 |
+| USD | BHD | quarterly | 0.377 |
+| USD | BIF | quarterly | 3443 |
+| USD | BMD | quarterly | 1 |
+| USD | BND | quarterly | 1.277 |
+| USD | BOB | quarterly | 11.96 |
+| USD | BRL | quarterly | 5.205 |
+| USD | BSD | quarterly | 1 |
+| USD | BWP | quarterly | 13.889 |
+| USD | BYN | quarterly | 3.029 |
+| USD | BZD | quarterly | 2 |
+| USD | CAD | quarterly | 1.418 |
+| USD | CDF | quarterly | 2303 |
+| USD | CHF | quarterly | 0.835 |
+| USD | CLP | quarterly | 973.27 |
+| USD | CNY | quarterly | 6.705 |
+| USD | COP | quarterly | 3325 |
+| USD | CRC | quarterly | 453.56 |
+| USD | CUC | quarterly | 1 |
+| USD | CUP | quarterly | 24 |
+| USD | CVE | quarterly | 97.11 |
+| USD | CZK | quarterly | 20.981 |
+| USD | DJF | quarterly | 177 |
+| USD | DKK | quarterly | 6.583 |
+| USD | DOP | quarterly | 59.26 |
+| USD | DZD | quarterly | 133.126 |
+| USD | EGP | quarterly | 51.89 |
+| USD | ERN | quarterly | 15 |
+| USD | ETB | quarterly | 161.725 |
+| USD | EUR | quarterly | 0.881 |
+| USD | FJD | quarterly | 2.216 |
+| USD | GBP | quarterly | 0.752 |
+| USD | GEL | quarterly | 2.567 |
+| USD | GHS | quarterly | 11.69 |
+| USD | GMD | quarterly | 72 |
+| USD | GNF | quarterly | 8795 |
+| USD | GTQ | quarterly | 7.635 |
+| USD | GYD | quarterly | 215 |
+| USD | HKD | quarterly | 7.846 |
+| USD | HNL | quarterly | 26.84 |
+| USD | HTG | quarterly | 130.404 |
+| USD | HUF | quarterly | 322.34 |
+| USD | IDR | quarterly | 17865.69 |
+| USD | ILS | quarterly | 3.074 |
+| USD | INR | quarterly | 95.83 |
+| USD | IQD | quarterly | 1309.5 |
+| USD | IRR | quarterly | 1374100 |
+| USD | ISK | quarterly | 120.33 |
+| USD | JMD | quarterly | 159 |
+
+[Full table on the U.S. Department of the Treasury rates page](https://allratestoday.com/tax-authority-rates-api/ustreasury/) · Source: [Official rates published by USTREASURY, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/ustreasury/). Rates are as printed by the tax authority; AllRatesToday is not affiliated with it.
+<!-- daily-table:end -->
 
 ## 🔑 Get your API key
 
