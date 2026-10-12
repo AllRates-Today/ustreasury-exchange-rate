@@ -37,10 +37,12 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 
 ## 📈 Latest published table
 
-Today's full U.S. Department of the Treasury table, straight from the tax authority's latest publication. On GitHub it is refreshed by [a daily Action](.github/workflows/daily-table.yml) that reads the keyless endpoint above and commits only when the tax authority publishes a new table; the copy on npm is as of the package's publish date.
+[![Latest U.S. Department of the Treasury table](https://allratestoday.com/api/open/central-bank/ustreasury/table.svg)](https://allratestoday.com/tax-authority-rates-api/ustreasury/)
+
+The image is rendered live from the keyless endpoint above, so it follows the tax authority's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the tax authority publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-09-30** by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-08.
+Published **2026-09-30** by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-12.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
@@ -297,6 +299,7 @@ curl "https://allratestoday.com/api/v1/central-bank/ustreasury/latest?format=xml
 - MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
 - Already using the general SDK or MCP server? Since 2026-10-01 [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk) 1.4+ has `officialRates('ustreasury')` and [`@allratestoday/mcp-server`](https://www.npmjs.com/package/@allratestoday/mcp-server) 0.6+ has a `get_official_rates` tool — both return this source's latest table with no key, so you can add it without a second dependency
 - Claude Code plugin (no key): `/plugin marketplace add AllRates-Today/claude-code-plugin` then `/plugin install allratestoday@allratestoday` — bundles both MCP servers plus an `/official-rate ustreasury ...` command
+- Need dated tables or history for an evaluation? Agents can self-issue a trial key with no signup: `POST https://allratestoday.com/api/agent/keys` (send `Content-Type: application/json`) returns a 100-call key valid 7 days; the MCP servers expose it as `request_trial_key`
 - Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
 
 ## ⚖️ Published vs derived rates
