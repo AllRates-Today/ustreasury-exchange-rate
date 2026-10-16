@@ -42,7 +42,7 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 The image is rendered live from the keyless endpoint above, so it follows the tax authority's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the tax authority publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-09-30** by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-14.
+Published **2026-10-15** by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-16.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
@@ -102,8 +102,8 @@ Published **2026-09-30** by U.S. Department of the Treasury — 145 rates, first
 | USD | IDR | quarterly | 17865.69 |
 | USD | ILS | quarterly | 3.074 |
 | USD | INR | quarterly | 95.83 |
-| USD | IQD | quarterly | 1309.5 |
-| USD | IRR | quarterly | 1374100 |
+| USD | IQD | quarterly | 1510 |
+| USD | IRR | quarterly | 1779500 |
 | USD | ISK | quarterly | 120.33 |
 | USD | JMD | quarterly | 159 |
 
