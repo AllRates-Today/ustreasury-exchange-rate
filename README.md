@@ -47,7 +47,7 @@ The image is rendered live from the keyless endpoint above, so it follows the ta
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-21.</summary>
+<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-26.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
@@ -383,6 +383,7 @@ Need the whole archive rather than an API call? The same published tables are mi
 - [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/) · [Methodology](https://allratestoday.com/official-rates-methodology/)
 - [Register (Free)](https://allratestoday.com/register) · [Dashboard](https://allratestoday.com/profile) · [Pricing](https://allratestoday.com/pricing/)
 - [Status](https://allratestoday.com/status)
+- [Postman collection](https://allratestoday.com/postman/)
 - [GitHub](https://github.com/AllRates-Today/ustreasury-exchange-rate)
 
 ## 📜 License
