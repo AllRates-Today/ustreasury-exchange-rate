@@ -1,6 +1,6 @@
 {
   "name": "ustreasury-exchange-rate",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "description": "Official U.S. Department of the Treasury (United States) quarterly exchange rates — 145 currencies vs USD, history since 2001. Zero-dependency Node.js/TypeScript client.",
   "keywords": [
     "ustreasury",
@@ -27,7 +27,17 @@
     "official-rates",
     "united-states",
     "api",
-    "typescript"
+    "typescript",
+    "money",
+    "convert",
+    "conversion",
+    "exchange",
+    "rate",
+    "accounting",
+    "utilities",
+    "number",
+    "cart",
+    "ecommerce"
   ],
   "homepage": "https://allratestoday.com/tax-authority-rates-api/ustreasury/",
   "repository": {
