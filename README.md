@@ -47,7 +47,7 @@ The image is rendered live from the keyless endpoint above, so it follows the ta
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-27.</summary>
+<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-29.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
