@@ -24,30 +24,15 @@
 
 Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
 
-## ⚡ Try it without a key
-
-The latest U.S. Department of the Treasury table is also served keyless, CORS-open and edge-cached, for evaluation, embeds and AI agents:
-
-```bash
-curl "https://allratestoday.com/api/open/central-bank/ustreasury?source=USD&target=EUR"
-```
-
-```js
-const r = await fetch('https://allratestoday.com/api/open/central-bank/ustreasury').then((x) => x.json());
-console.log(r.rate_date, r.rates.length); // the tax authority's latest published table, no key
-```
-
-The open endpoint serves the *latest* table only (JSON by default; add `?format=csv`, `xml` or `xlsx` for a file) and is free to use with a visible, followable link where the rates are shown: `<a href="https://allratestoday.com">Exchange rates by AllRatesToday</a>` (terms: <https://allratestoday.com/terms/#attribution>). The client below uses the keyed API, which adds point-in-time tables and history; with a key the link is appreciated, not required.
-
 ## 📈 Latest published table
 
 [![Latest U.S. Department of the Treasury table](https://allratestoday.com/api/open/central-bank/ustreasury/table.svg)](https://allratestoday.com/tax-authority-rates-api/ustreasury/)
 
-The image is rendered live from the keyless endpoint above, so it follows the tax authority's publications on npm and on GitHub alike without a new release. The same table as text is folded below for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the tax authority publishes a new table; on npm it is as of the package's publish date.
+The image is rendered live from the keyless endpoint, so it follows the tax authority's publications on npm and on GitHub alike without a new release. The same table as text is folded below for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the tax authority publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-29.</summary>
+<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-30.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
