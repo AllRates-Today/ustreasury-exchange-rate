@@ -362,6 +362,7 @@ Need the whole archive rather than an API call? The same published tables are mi
 
 ## 🔗 Links
 
+- **Website:** [allratestoday.com](https://allratestoday.com)
 - [U.S. Department of the Treasury rates page](https://allratestoday.com/tax-authority-rates-api/ustreasury/) — live table, publication cadence, FAQ
 - [All tax authority sources](https://allratestoday.com/tax-authority-rates-api/)
 - [Package docs on the site](https://allratestoday.com/docs/sdk/ustreasury-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
