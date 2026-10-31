@@ -32,7 +32,7 @@ The image is rendered live from the keyless endpoint, so it follows the tax auth
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-15 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-30.</summary>
+<summary>Table as text: published 2026-10-30 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-10-31.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
