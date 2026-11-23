@@ -32,7 +32,7 @@ The image is rendered live from the keyless endpoint, so it follows the tax auth
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-30 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-11-15.</summary>
+<summary>Table as text: published 2026-10-30 by U.S. Department of the Treasury — 145 rates, first 60 shown. Updated 2026-11-23.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
@@ -364,7 +364,7 @@ Need the whole archive rather than an API call? The same official tables are mir
 
 - **Website:** [allratestoday.com](https://allratestoday.com)
 - [U.S. Department of the Treasury rates page](https://allratestoday.com/tax-authority-rates-api/ustreasury/) — live table, publication cadence, FAQ
-- [All tax authority sources](https://allratestoday.com/tax-authority-rates-api/) · [Full list of 130+ central banks and tax authorities](https://allratestoday.com/central-bank-rates-api/institutions/) — one API, the same response shape for every source
+- [All tax authority sources](https://allratestoday.com/tax-authority-rates-api/) · [Full list of 120+ central banks and 50+ tax authorities](https://allratestoday.com/central-bank-rates-api/institutions/) — one API, the same response shape for every source
 - [Download central bank rates](https://allratestoday.com/download-central-bank-rates/) — every bank's latest table and history as Excel, CSV or JSON
 - [Bank Exchange Rate API](https://allratestoday.com/bank-exchange-rate-api/) — live buy and sell rates from 1,200+ commercial banks in 120+ countries · [npm](https://www.npmjs.com/package/bank-exchange-rates) · [GitHub](https://github.com/AllRates-Today/bank-exchange-rates)
 - [Package docs on the site](https://allratestoday.com/docs/sdk/ustreasury-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
